@@ -216,4 +216,5 @@ target/
 dbt_packages/
 dbt_internal_packages/
 package-lock.yml
+airstats/profiles.yml
 logs/

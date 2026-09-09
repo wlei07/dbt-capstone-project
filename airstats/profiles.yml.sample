@@ -1,0 +1,29 @@
+airstats:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: WGQKSXA-IC90925
+      user: dbt
+      role: TRANSFORM
+      database: AIRSTATS
+      schema: DEV
+      threads: 4
+      warehouse: COMPUTE_WH
+      private_key: |
+        -----BEGIN PRIVATE KEY-----
+
+        -----END PRIVATE KEY-----
+    prod:
+      type: snowflake
+      account: WGQKSXA-IC90925
+      user: dbt
+      role: TRANSFORM
+      private_key: |
+        -----BEGIN PRIVATE KEY-----
+
+        -----END PRIVATE KEY-----
+      database: AIRSTATS
+      schema: PROD
+      threads: 4
+      warehouse: COMPUTE_WH
