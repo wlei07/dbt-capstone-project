@@ -1,0 +1,10 @@
+sources:
+  - name: airstats
+    schema: raw
+    tables:
+        # name is used by dbt
+      - name: comments
+        # identifier is the database table name
+        identifier: airport_comments
+      - name: airports
+      - name: runways
