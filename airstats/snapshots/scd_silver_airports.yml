@@ -2,7 +2,7 @@ snapshots:
   - name: scd_silver_airports
     relation: ref('silver_airports')
     config:
-      target_schema: dev
+      target_schema: snapshots
       unique_key: AIRPORT_IDENT
       strategy: check
       check_cols: all
