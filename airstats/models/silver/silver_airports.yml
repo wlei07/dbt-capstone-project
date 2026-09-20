@@ -1,6 +1,6 @@
 models:
   - name: silver_airports
-    description: airports
+    description: '{{ doc("silver_airports_description") }}'
     columns:
       - name: airport_ident
         description: identifier of the airport
