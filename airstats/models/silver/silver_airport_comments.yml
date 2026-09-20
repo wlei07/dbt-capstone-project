@@ -1,0 +1,37 @@
+models:
+  - name: silver_airport_comments
+    description: Comments submitted about airports.
+    columns:
+      - name: comment_id
+        description: Unique identifier for the airport comment.
+        data_tests:
+          - not_null
+          - unique
+      - name: airport_ident
+        description: The unique identifier for the airport.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('silver_airports')
+                field: airport_ident
+              config:
+                severity: warn
+      - name: comment_timestamp
+        description: The timestamp when the comment was made.
+        data_tests:
+          - not_null
+      - name: member_nickname
+        description: The member's nickname.
+        data_tests:
+          - not_null
+      - name: comment_subject
+        description: The comment subject.
+      - name: comment_body
+        description: The comment body.
+        data_tests:
+          - not_null
+      - name: loaded_at
+        description: The timestamp when the comment was loaded at.
+        data_tests:
+          - not_null

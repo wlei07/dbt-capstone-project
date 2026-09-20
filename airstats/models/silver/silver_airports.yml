@@ -1,0 +1,47 @@
+models:
+  - name: silver_airports
+    description: airports
+    columns:
+      - name: airport_ident
+        description: identifier of the airport
+        data_tests:
+          - not_null
+          - unique
+      - name: airport_type
+        description: airport type
+        data_tests:
+          - not_null
+      - name: airport_name
+        description: airport name
+        data_tests:
+          - not_null
+      - name: airport_lat
+        description: airport latitude
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: -90
+                max_value: 90
+                strictly: false
+      - name: airport_long
+        description: airport longitude
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: -180
+                max_value: 180
+                strictly: false
+      - name: continent
+        description: continent
+        data_tests:
+          - not_null
+      - name: iso_country
+        description: country in iso standard format
+        data_tests:
+          - not_null
+      - name: iso_region
+        description: region in iso standard format
+        data_tests:
+          - not_null
